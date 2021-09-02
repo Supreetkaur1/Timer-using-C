@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+
+
+int main()
+{ int a,b,c,d=1000;
+    printf("Please set the timer:\n");
+    scanf("%d %d %d",&a,&b,&c);
+    if(a>24||b>60||c>60) { printf ("Invalid Input");  }
+   else {while(1) { if(c!=0)
+					{
+						c--;
+					}
+					if(c==0 && b!=0)
+					{
+						c=59;
+						b--;
+					}
+					if(c==0 && b==0 && a!=0)
+					{
+						a--;
+						b=59;
+						c=59;
+					}
+					if(a==0 && b==0 && c==0)
+					{ printf("\a");
+						break;
+					}
+    printf("%02d:%02d:%02d",a,b,c);
+Sleep(d);
+    system("cls");
+
+
+    } }
+
+return 0;}
